@@ -72,14 +72,23 @@
     </section>
     <!-- categories section -->
 
+    <!-- preloder -->
+    <section class="">
+      <div
+        id="preloader"
+        class="d-none d-flex justify-content-center align-items-center"
+        style="height: 100vh; background-color: #0000003b"
+      >
+        <img src="./images/preload.gif" alt="" />
+      </div>
+    </section>
+
     <!-- category items message section  -->
     <div class="container">
       <div class="row">
         <div class="col-12">
           <div class="alert alert-light" role="alert">
-            <p class="text-black fw-bold m-0" id="category-message">
-              
-            </p>
+            <p class="text-black fw-bold m-0" id="category-message"></p>
           </div>
         </div>
       </div>
@@ -91,14 +100,46 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <div class="news-card" id="news-card">
-              
-            </div>
+            <div class="news-card" id="news-card"></div>
           </div>
         </div>
       </div>
     </section>
     <!-- news card sections end  -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="newsModal"
+      tabindex="-1"
+      aria-labelledby="newsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" id="news-modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- footer section start -->
     <footer
