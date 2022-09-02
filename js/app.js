@@ -25,6 +25,7 @@ const newsByCategory = (category_id) => {
     .then((res) => res.json())
     .then((data) => {
       const allNews = data.data;
+      console.log(allNews);
       preloader(true);
       const message = document.getElementById("category-message");
       // showing messages
@@ -36,6 +37,13 @@ const newsByCategory = (category_id) => {
 
       const newsCard = document.getElementById("news-card");
       newsCard.innerHTML = ``;
+
+      // top views news
+      allNews.sort(function (a, b) {
+        return b.total_view - a.total_view;
+      });
+
+      // showing news in a card
       allNews.forEach((news) => {
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("card", "mb-3");
@@ -54,7 +62,7 @@ const newsByCategory = (category_id) => {
                         ${news.title}
                       </h5>
                       <p class="card-text">
-                        ${news.details.slice(1, 650)}
+                        ${news.details.slice(1, 650)}....
                       </p>
                       <div class="card-footer-items">
                         <div class="row">
@@ -142,14 +150,13 @@ const viewNews = (news_id) => {
     .then((res) => res.json())
     .then((data) => {
       const news = data.data;
-      console.log(news);
       const modalBody = document.getElementById("news-modal-body");
       modalBody.innerHTML = `
         <div class="modal-news-img" id="">
                 <img src="${news[0].image_url}" class="img-fluid mb-4" alt="">
             </div>
             <div class="modal-title">
-                <h5>${news[0].title}</h5>
+                <h5 class="fw-bold">${news[0].title}</h5>
                 <p class="mt-3">${news[0].details}</p>
             </div>
             <div class="row">
