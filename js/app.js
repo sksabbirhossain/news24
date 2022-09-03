@@ -150,6 +150,7 @@ const viewNews = (news_id) => {
     .then((res) => res.json())
     .then((data) => {
       const news = data.data;
+      console.log(news)
       const modalBody = document.getElementById("news-modal-body");
       modalBody.innerHTML = `
         <div class="modal-news-img" id="">
